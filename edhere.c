@@ -160,6 +160,12 @@ WinMain(HINSTANCE instance, HINSTANCE prev, LPSTR cmdline, int cmdshow)
 	if (dw > LEN(editor))
 		fatal(ERR_EDITORLONG);
 
+	/*
+	 * Shortcut invocation is not yet supported so give the user some time to
+	 * focus on a text field.
+	 */
+	Sleep(3000);
+
 	ZeroMemory(&gti, sizeof(gti));
 	gti.cbSize = sizeof(gti);
 
